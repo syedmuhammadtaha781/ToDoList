@@ -1,0 +1,57 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+body{
+    background: #22C1C3;
+    background: radial-gradient(circle,rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    display: flex;
+    justify-content: center;
+}
+.container{
+    margin-top: 10em;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 1em;
+}
+.container>h1{
+    color: blue;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 0.6em;
+}
+#addtext{
+    padding: 1em;
+    border-radius: 1em;
+    border: 0.2em solid black;
+}
+#btn{
+    background-color: green;
+    padding: 1em;
+    border-radius: 1em; 
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 0.5em;
+}
+.newp{
+    padding: 1em;
+}
+.E-D-btn{
+    background-color: green;
+    color: white;
+    font-weight: 500;
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
+}
+@media (max-width:340px) {
+    #btn{
+        margin-left: 0.1em;
+    }
+    .container{
+        padding: 0.8em;
+    }
+}
+
