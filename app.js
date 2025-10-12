@@ -1,39 +1,48 @@
-alert("Welcome to Taha's Todo List");
 var addtext = document.getElementById("addtext");
 var btn = document.getElementById("btn");
 var addin  = document.querySelector(".addin");
-btn.addEventListener("click",()=>{
-    let newp = document.createElement("p");
-    addin.appendChild(newp);
-    let newspan = document.createElement("span");
-    newp.appendChild(newspan);
-    let editbtn = document.createElement("button");
-    newp.appendChild(editbtn);
-    editbtn.setAttribute("class", "E-D-btn");
+btn.addEventListener("click", ()=>{
+    var newdiv = document.createElement("div");
+    addin.appendChild(newdiv);
+    newdiv.setAttribute("class","newdiv");
+    var newp1 = document.createElement("p");
+    newdiv.appendChild(newp1);
+    newp1.setAttribute("class","newp");
+    newp1.textContent = addtext.value;
+    var newp2 = document.createElement("p");
+    newdiv.appendChild(newp2);
+    newp2.setAttribute("class","newp2");
+    var donebtn = document.createElement("button");
+    newp2.appendChild(donebtn);
+    donebtn.setAttribute("class","edd-btns");
+    donebtn.textContent = "Done";
+    var editbtn = document.createElement("button");
+    newp2.appendChild(editbtn);
+    editbtn.setAttribute("class","edd-btns");
     editbtn.textContent = "Edit";
-    let delbtn = document.createElement("button");
-    newp.appendChild(delbtn);
-    delbtn.setAttribute("class", "E-D-btn");
+    var delbtn = document.createElement("button");
+    newp2.appendChild(delbtn);
+    delbtn.setAttribute("class","edd-btns");
     delbtn.textContent = "Delete";
-    newspan.textContent = addtext.value;
-    newp.style.display = "flex";
-    newp.style.justifyContent = "space-between";
-    newp.style.alignItems = "center";
-    newp.style.padding = "1em";
     if (addtext.value === "") {
-        newp.remove();
-        alert("Please Enter some text")
+        newdiv.remove();
+        alert("Please Enter Text")
     }
     addtext.value = "";
-    delbtn.addEventListener("click",()=>{
-        newp.remove();
+    donebtn.addEventListener("click", ()=>{
+        newp1.style.textDecoration = "line-through";
+        newp1.style.color = " #888";
+        newp2.remove();
     })
-    editbtn.addEventListener("click",()=>{
-        let editprompt = prompt("Edit your task",newspan.textContent);
-        if (editprompt ===  "") {
-            newp.remove();
+    editbtn.addEventListener("click", ()=>{
+        var a = prompt("Edit your task",newp1.textContent);
+        if (a === "") {
+            newdiv.remove();
         }
-        newspan.textContent = editprompt;
+        newp1.textContent = a;
+    })   
+    delbtn.addEventListener("click", ()=>{
+       newdiv.remove();
     })
 })
 
