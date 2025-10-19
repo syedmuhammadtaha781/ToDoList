@@ -1,4 +1,4 @@
-var addtext = document.getElementById("addtext").trim();
+var addtext = document.getElementById("addtext");
 var btn = document.getElementById("btn");
 var addin  = document.querySelector(".addin");
 btn.addEventListener("click", ()=>{
