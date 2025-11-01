@@ -1,7 +1,7 @@
 var addtext = document.getElementById("addtext");
 var btn = document.getElementById("btn");
 var addin  = document.querySelector(".addin");
-btn.addEventListener("click", ()=>{
+btn.addEventListener("click", (e)=>{
     var newdiv = document.createElement("div");
     addin.appendChild(newdiv);
     newdiv.setAttribute("class","newdiv");
@@ -44,6 +44,7 @@ btn.addEventListener("click", ()=>{
     delbtn.addEventListener("click", ()=>{
        newdiv.remove();
     })
+    e.preventDefault();
 })
 
 
